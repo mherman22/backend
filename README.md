@@ -1,3 +1,6 @@
-#backendApi#
-Requiriments : nodejs,sequelize orm,expressjs,postgreql datbase
-   
+# backendApi
+# Requirements
+* Nodejs
+* Sequelize ORM
+* Postgresql database
+* Expressjs
