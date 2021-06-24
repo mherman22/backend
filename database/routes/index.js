@@ -238,3 +238,6 @@ router.delete(
   "/seasonLeagueStandings/:id",
   seasonLeagueStandingsController.deleteSeasonLeagueStandings
 );
+
+
+module.exports = router;
