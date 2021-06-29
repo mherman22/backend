@@ -28,6 +28,7 @@ const seasonLeagueStandingsController = require("./database/controllers/seasonLe
 
 //routes for school type
 router.get("/schoolType", schoolTypeController.getAllSchoolTypes);
+router.get("/schoolType", schoolTypeController.createSchoolType);
 router.get("/schoolType/:id", schoolTypeController.getOneSchoolType);
 router.put("/schoolType/:id", schoolTypeController.updateSchoolType);
 router.delete("/schoolType/:id", schoolTypeController.deleteAllSchoolType);
