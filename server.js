@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const app = express();
+const routes = require('./database/routes/index')
 
 const Sequelize = require("sequelize");
 const seq = require("./database/config/config");
@@ -26,7 +27,7 @@ sequelize
   })
   .catch((err) => console.log(err));
 
-app.use('/', router);
+app.use('/', routes);
 app.listen(port, () => {
   console.log(`server running at ${port}`);
 });
