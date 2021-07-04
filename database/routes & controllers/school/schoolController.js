@@ -31,15 +31,15 @@ exports.getOneSchool = async (res, req) => {
 //-------------------------------------------------------------------------------------------------------------
 exports.createSchool = async (req, res) => {
   const {
-    School_id,
-    school_type_id,
-    School_name,
-    school_logo,
-    Physical_address,
-    Mobile_telephone,
-    Other_telephone,
-    School_email,
-    School_website,
+    School_id:School_id,
+    school_type_id:school_type_id,
+    School_name:School_name,
+    school_logo:school_logo,
+    Physical_address:Physical_address,
+    Mobile_telephone:Mobile_telephone,
+    Other_telephone:Other_telephone,
+    School_email:School_email,
+    School_website:School_website,
   } = req.body;
   try {
     let newSchool = await school.create(
