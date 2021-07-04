@@ -33,7 +33,7 @@ exports.createSchoolType = async (req, res) => {
   const { School_type_id, School_type_name, School_type_description } =
     req.body;
   try {
-    let newSchoolType = await schoolType.craete(
+    let newSchoolType = await schoolType.create(
       {
         School_type_id: School_type_id,
         School_type_name: School_type_name,

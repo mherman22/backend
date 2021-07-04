@@ -3,6 +3,7 @@ const router = express.Router();
 const seasonController = require("./seasonController");
 
 router.get("/season", seasonController.getAllSeason);
+router.post("/season", seasonController.createSeason);
 router.get("/season/:id", seasonController.getOneSeason);
 router.put("/season/:id", seasonController.updateSeason);
 router.delete("/season/:id", seasonController.deleteSeason);
