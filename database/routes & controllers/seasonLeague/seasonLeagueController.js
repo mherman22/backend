@@ -85,7 +85,7 @@ exports.updateSeasonLeague = (req, res) => {
     if (!seasonLeague) {
       res.status(404).json({
         message:
-          "Not Found for updating a season league team with id = " +
+          "Not Found for updating a season league with id = " +
           seasonLeagueId,
         seasonLeague: "",
         error: "404",
@@ -107,21 +107,21 @@ exports.updateSeasonLeague = (req, res) => {
       if (!result) {
         res.status(500).json({
           message:
-            "Error -> Can not update a season league team with id = " + req.params.id,
+            "Error -> Can not update a season league with id = " + req.params.id,
           error: "Can not be Updated",
         });
       }
 
       res.status(200).json({
         message:
-          "Updated successfully a season league team with id = " + seasonLeagueId,
+          "Updated successfully a season league with id = " + seasonLeagueId,
         seasonLeagues: updatedObject,
       });
     }
   } catch (error) {
     res.status(500).json({
       message:
-        "Error -> Can not update a season league team with id = " + req.params.id,
+        "Error -> Can not update a season league with id = " + req.params.id,
       error: error.message,
     });
   }
