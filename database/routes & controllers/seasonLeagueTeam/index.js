@@ -4,7 +4,7 @@ const seasonLeagueTeamController = require("./seasonLeagueTeamController");
 
 router.get(
   "/seasonLeagueTeam",
-  seasonLeagueTeamController.getAllSeasonLeagueTeam
+  seasonLeagueTeamController.getAllSeasonLeagueTeams
 );
 router.post(
     "/seasonLeagueTeam",
