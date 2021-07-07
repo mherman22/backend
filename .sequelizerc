@@ -5,6 +5,5 @@ module.exports = {
   'models-path': path.resolve('./database/models'),
   'seeders-path': path.resolve('./database/seeders'),
   'migrations-path': path.resolve('./database/migrations'),
-  'controllers-path' : path.resolve('./database/controllers'),
-  'routes-path': path.resolve('./database/routes')
+  'controllers-path' : path.resolve('./database/routes & controllers')
 }
