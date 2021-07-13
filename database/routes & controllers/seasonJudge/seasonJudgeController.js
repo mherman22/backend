@@ -56,7 +56,7 @@ exports.createSeasonJudge = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeasonJudge = (req, res) => {
+exports.updateSeasonJudge = async(req, res) => {
   try {
     let seasonJudgeId = req.params.id;
     let seasonJudge = await seasonJudge.findByPk(seasonJudgeId);
@@ -100,7 +100,7 @@ exports.updateSeasonJudge = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeasonJudge = (req, res) => {
+exports.deleteSeasonJudge = async(req, res) => {
   const { id } = req.params;
   const deletedSeasonJudge = await seasonJudge.destroy({
     where: {

@@ -83,10 +83,10 @@ exports.createSchool = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSchool = (req, res) => {
+exports.updateSchool = async(req, res) => {
   try {
     let schoolId = req.params.id;
-    let schools = await schoolType.findByPk(schoolId);
+    let schools = await school.findByPk(schoolId);
 
     if (!schools) {
       res.status(404).json({
@@ -133,7 +133,7 @@ exports.updateSchool = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSchool = (req, res) => {
+exports.deleteSchool = async(req, res) => {
   const { id } = req.params;
   const deletedSchool = await school.destroy({
     where: {

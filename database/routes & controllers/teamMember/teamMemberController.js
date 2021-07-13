@@ -82,7 +82,7 @@ exports.createTeamMember = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateTeamMember = (req, res) => {
+exports.updateTeamMember = async(req, res) => {
   try {
     let teamMemberId = req.params.id;
     let teamMember = await teamMember.findByPk(teamMemberId);
@@ -134,7 +134,7 @@ exports.updateTeamMember = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteTeamMember = (req, res) => {
+exports.deleteTeamMember = async(req, res) => {
   const { id } = req.params;
   const deletedteamMember = await teamMember.destroy({
     where: {

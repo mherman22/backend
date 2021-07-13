@@ -65,7 +65,7 @@ exports.createSeason = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeason = (req, res) => {
+exports.updateSeason = async(req, res) => {
   try {
     let seasonId = req.params.id;
     let season = await season.findByPk(seasonId);
@@ -109,7 +109,7 @@ exports.updateSeason = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeason = (req, res) => {
+exports.deleteSeason = async(req, res) => {
   const { id } = req.params;
   const deletedseason = await season.destroy({
     where: {

@@ -77,7 +77,7 @@ exports.createSeasonLeague = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeasonLeague = (req, res) => {
+exports.updateSeasonLeague = async(req, res) => {
   try {
     let seasonLeagueId = req.params.id;
     let seasonLeague = await seasonLeague.findByPk(seasonLeagueId);
@@ -127,7 +127,7 @@ exports.updateSeasonLeague = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeasonLeague = (req, res) => {
+exports.deleteSeasonLeague = async(req, res) => {
   const { id } = req.params;
   const deletedseasonLeague = await seasonLeague.destroy({
     where: {

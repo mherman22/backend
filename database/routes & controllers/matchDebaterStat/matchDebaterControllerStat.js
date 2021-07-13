@@ -1,6 +1,6 @@
 const matchDebaterStat = require("../../models/match_debater_stat");
 
-exports.getAllmatchDebaterStat = async (req, res) => {
+exports.getAllMatchDebaterStat = async (req, res) => {
   try {
     const matchDebaterStats = await matchDebaterStat.findAll();
     res.json({
@@ -67,7 +67,7 @@ exports.createMatchDebaterStat = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateMatchDebaterStat = (req, res) => {
+exports.updateMatchDebaterStat = async(req, res) => {
   try {
     let matchDebaterStatsId = req.params.id;
     let matchDebaterStats = await matchDebaterStat.findByPk(
@@ -119,7 +119,7 @@ exports.updateMatchDebaterStat = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteMatchDebaterStat = (req, res) => {
+exports.deleteMatchDebaterStat = async(req, res) => {
   const { id } = req.params;
   const deletedmatchDebaterStats = await matchDebaterStats.destroy({
     where: {

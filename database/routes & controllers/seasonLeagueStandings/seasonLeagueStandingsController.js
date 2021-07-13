@@ -94,7 +94,7 @@ exports.createSeasonLeagueStandings = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeasonLeagueStandings = (req, res) => {
+exports.updateSeasonLeagueStandings = async(req, res) => {
   try {
     let seasonLeagueStandingId = req.params.id;
     let seasonLeagueStanding = await seasonLeagueStanding.findByPk(
@@ -153,7 +153,7 @@ exports.updateSeasonLeagueStandings = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeasonLeagueStandings = (req, res) => {
+exports.deleteSeasonLeagueStandings = async(req, res) => {
   const { id } = req.params;
   const deletedseasonLeagueStanding = await seasonLeagueStanding.destroy({
     where: {

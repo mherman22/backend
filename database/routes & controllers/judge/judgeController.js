@@ -67,7 +67,7 @@ exports.createNewJudge = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateJudge = (req, res) => {
+exports.updateJudge = async (req, res) => {
   try {
     let judgeId = req.params.id;
     let judge = await judge.findByPk(judgeId);
@@ -113,7 +113,7 @@ exports.updateJudge = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteJudge = (req, res) => {
+exports.deleteJudge = async (req, res) => {
   const { id } = req.params;
   const deletedjudge = await judge.destroy({
     where: {

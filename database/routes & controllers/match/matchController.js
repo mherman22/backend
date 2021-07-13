@@ -88,7 +88,7 @@ exports.createMatch = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateMatch = (req, res) => {
+exports.updateMatch = async(req, res) => {
   try {
     let matchsId = req.params.id;
     let matchs = await match.findByPk(matchsId);
@@ -143,7 +143,7 @@ exports.updateMatch = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteMatch = (req, res) => {
+exports.deleteMatch = async(req, res) => {
   const { id } = req.params;
   const deletedmatchs = await matchs.destroy({
     where: {

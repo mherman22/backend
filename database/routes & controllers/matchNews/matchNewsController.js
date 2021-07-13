@@ -73,7 +73,7 @@ exports.createMatchNews = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateMatchNews = (req, res) => {
+exports.updateMatchNews = async(req, res) => {
   try {
     let matchNewssId = req.params.id;
     let matchNewss = await matchNews.findByPk(matchNewssId);
@@ -120,7 +120,7 @@ exports.updateMatchNews = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteMatchNews = (req, res) => {
+exports.deleteMatchNews = async(req, res) => {
   const { id } = req.params;
   const deletedmatchNewss = await matchNewss.destroy({
     where: {

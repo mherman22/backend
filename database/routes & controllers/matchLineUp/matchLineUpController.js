@@ -1,6 +1,6 @@
 const matchLineUp = require("../../models/match_line_up");
 
-exports.getAllmatchLineUp = async (req, res) => {
+exports.getAllMatchLineUp = async (req, res) => {
   try {
     const matchLineUps = await matchLineUp.findAll();
     res.json({
@@ -15,7 +15,7 @@ exports.getAllmatchLineUp = async (req, res) => {
 
 //-------------------------------------------------------------------------------------------------------------
 
-exports.getOnematchLineUp = async (res, req) => {
+exports.getOneMatchLineUp = async (res, req) => {
   const { id } = req.params;
 
   const matchLineUps = await matchLineUp.findOne({
@@ -28,7 +28,7 @@ exports.getOnematchLineUp = async (res, req) => {
   });
 };
 //-------------------------------------------------------------------------------------------------------------
-exports.creatematchLineUp = async (req, res) => {
+exports.createMatchLineUp = async (req, res) => {
   const {
     Match_line_up_id,
     Match_id,
@@ -67,7 +67,7 @@ exports.creatematchLineUp = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updatematchLineUp = (req, res) => {
+exports.updateMatchLineUp = async(req, res) => {
   try {
     let matchLineUpsId = req.params.id;
     let matchLineUps = await matchLineUp.findByPk(
@@ -119,7 +119,7 @@ exports.updatematchLineUp = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deletematchLineUp = (req, res) => {
+exports.deleteMatchLineUp = async(req, res) => {
   const { id } = req.params;
   const deletedmatchLineUps = await matchLineUps.destroy({
     where: {

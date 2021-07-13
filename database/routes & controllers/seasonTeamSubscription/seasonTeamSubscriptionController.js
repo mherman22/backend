@@ -28,7 +28,7 @@ exports.getOneSeasonTeamSubscription = async (res, req) => {
   });
 };
 //-------------------------------------------------------------------------------------------------------------
-exports.createseasonTeamSubscription = async (req, res) => {
+exports.createSeasonTeamSubscription = async (req, res) => {
   const { 
     Team_subscription_id,
     season_id,
@@ -65,7 +65,7 @@ exports.createseasonTeamSubscription = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeasonTeamSubscription = (req, res) => {
+exports.updateSeasonTeamSubscription = async(req, res) => {
   try {
     let seasonTeamSubscriptionId = req.params.id;
     let seasonTeamSubscription = await seasonTeamSubscription.findByPk(seasonTeamSubscriptionId);
@@ -111,7 +111,7 @@ exports.updateSeasonTeamSubscription = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeasonTeamSubscription = (req, res) => {
+exports.deleteSeasonTeamSubscription = async(req, res) => {
   const { id } = req.params;
   const deletedseasonTeamSubscription = await seasonTeamSubscription.destroy({
     where: {

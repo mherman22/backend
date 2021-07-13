@@ -65,7 +65,7 @@ exports.createTeams = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateTeam = (req, res) => {
+exports.updateTeam = async(req, res) => {
   try {
     let teamId = req.params.id;
     let team = await team.findByPk(teamId);
@@ -108,7 +108,7 @@ exports.updateTeam = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteTeam = (req, res) => {
+exports.deleteTeam = async(req, res) => {
   const { id } = req.params;
   const deletedteam = await team.destroy({
     where: {

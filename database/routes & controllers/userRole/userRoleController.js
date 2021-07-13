@@ -28,7 +28,7 @@ exports.getOneUserRole = async (res, req) => {
   });
 };
 //-------------------------------------------------------------------------------------------------------------
-exports.createUserRoles = async (req, res) => {
+exports.createUserRole = async (req, res) => {
   const { 
     User_role_id,
     User_role_name,
@@ -65,7 +65,7 @@ exports.createUserRoles = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateUserRole = (req, res) => {
+exports.updateUserRole = async(req, res) => {
   try {
     let userRoleId = req.params.id;
     let userRole = await userRole.findByPk(userRoleId);
@@ -108,7 +108,7 @@ exports.updateUserRole = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteUserRole = (req, res) => {
+exports.deleteUserRole = async(req, res) => {
   const { id } = req.params;
   const deleteduserRole = await userRole.destroy({
     where: {

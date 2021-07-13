@@ -62,7 +62,7 @@ exports.createMatchComment = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateMatchComment = (req, res) => {
+exports.updateMatchComment = async(req, res) => {
   try {
     let matchcommentsId = req.params.id;
     let matchcomments = await matchcomment.findByPk(matchcommentsId);
@@ -109,7 +109,7 @@ exports.updateMatchComment = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteMatchComment = (req, res) => {
+exports.deleteMatchComment = async(req, res) => {
   const { id } = req.params;
   const deletedmatchcomments = await matchcomments.destroy({
     where: {

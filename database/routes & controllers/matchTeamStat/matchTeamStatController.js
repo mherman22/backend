@@ -70,7 +70,7 @@ exports.createMatchTeamStat = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateMatchTeamStat = (req, res) => {
+exports.updateMatchTeamStats = async(req, res) => {
   try {
     let matchTeamStatsId = req.params.id;
     let matchTeamStats = await matchTeamStat.findByPk(matchTeamStatsId);
@@ -119,7 +119,7 @@ exports.updateMatchTeamStat = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deletematchTeamStat = (req, res) => {
+exports.deleteMatchTeamStats = async(req, res) => {
   const { id } = req.params;
   const deletedmatchTeamStats = await matchTeamStats.destroy({
     where: {

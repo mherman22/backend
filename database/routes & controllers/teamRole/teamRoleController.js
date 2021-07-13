@@ -64,7 +64,7 @@ exports.createTeamRole = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateTeamRole = (req, res) => {
+exports.updateTeamRole = async(req, res) => {
   try {
     let teamRoleId = req.params.id;
     let teamRole = await teamRole.findByPk(teamRoleId);
@@ -110,7 +110,7 @@ exports.updateTeamRole = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteTeamRole = (req, res) => {
+exports.deleteTeamRole = async(req, res) => {
   const { id } = req.params;
   const deletedteamRole = await teamRole.destroy({
     where: {

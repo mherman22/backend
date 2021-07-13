@@ -62,7 +62,7 @@ exports.createSchoolType = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSchoolType = (req, res) => {
+exports.updateSchoolType = async(req, res) => {
   try {
     let schoolTypeId = req.params.id;
     let schooltype = await schoolType.findByPk(schoolTypeId);
@@ -106,7 +106,7 @@ exports.updateSchoolType = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSchoolType = (req, res) => {
+exports.deleteSchoolType = async(req, res) => {
   const { id } = req.params;
   const deletedSchoolType = await schoolType.destroy({
     where: {

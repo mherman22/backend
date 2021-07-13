@@ -76,7 +76,7 @@ exports.createUser = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateUser = (req, res) => {
+exports.updateUser = async(req, res) => {
   try {
     let userId = req.params.id;
     let user = await user.findByPk(userId);
@@ -126,7 +126,7 @@ exports.updateUser = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteUsers = (req, res) => {
+exports.deleteUsers = async(req, res) => {
   const { id } = req.params;
   const deleteduser = await user.destroy({
     where: {

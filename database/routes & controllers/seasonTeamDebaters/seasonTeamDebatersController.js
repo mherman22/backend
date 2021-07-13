@@ -61,7 +61,7 @@ exports.createSeasonTeamDebaters = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateSeasonTeamDebaters = (req, res) => {
+exports.updateSeasonTeamDebaters = async(req, res) => {
   try {
     let seasonTeamDebaterId = req.params.id;
     let seasonTeamDebater = await seasonTeamDebater.findByPk(
@@ -112,7 +112,7 @@ exports.updateSeasonTeamDebaters = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteSeasonTeamDebaters = (req, res) => {
+exports.deleteSeasonTeamDebaters = async(req, res) => {
   const { id } = req.params;
   const deletedseasonTeamDebater = await seasonTeamDebater.destroy({
     where: {

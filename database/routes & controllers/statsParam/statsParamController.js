@@ -71,7 +71,7 @@ exports.createStatsParam = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateStatsParam = (req, res) => {
+exports.updateStatsParam = async(req, res) => {
   try {
     let statsParamId = req.params.id;
     let statsParam = await statsParam.findByPk(statsParamId);
@@ -115,7 +115,7 @@ exports.updateStatsParam = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteStatsParam = (req, res) => {
+exports.deleteStatsParam = async(req, res) => {
   const { id } = req.params;
   const deletedstatsParam = await statsParam.destroy({
     where: {

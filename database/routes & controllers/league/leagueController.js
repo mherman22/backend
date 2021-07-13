@@ -62,7 +62,7 @@ exports.createNewLeague = async (req, res) => {
 
 //----------------------------------------------------------------------------------------------------------------
 
-exports.updateLeague = (req, res) => {
+exports.updateLeague = async (req, res) => {
   try {
     let leagueId = req.params.id;
     let league = await league.findByPk(leagueId);
@@ -106,7 +106,7 @@ exports.updateLeague = (req, res) => {
   }
 };
 //----------------------------------------------------------------------------------------------------
-exports.deleteLeague = (req, res) => {
+exports.deleteLeague = async (req, res) => {
   const { id } = req.params;
   const deletedleague = await league.destroy({
     where: {
