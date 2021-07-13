@@ -9,7 +9,6 @@ const matchCommentsRoutes = require("./database/routes & controllers/matchCommen
 const matchDebaterStatRoutes = require("./database/routes & controllers/matchDebaterStat/index");
 const matchLineUpRoutes = require("./database/routes & controllers/matchLineUp/index");
 const matchNewsRoutes = require("./database/routes & controllers/matchNews/index");
-const matchTeamRoutes = require("./database/routes & controllers/matchTeam/index");
 const matchTeamStatRoutes = require("./database/routes & controllers/matchTeamStat/index");
 const schoolRoutes = require("./database/routes & controllers/school/index");
 const schooltypeRoutes = require("./database/routes & controllers/schooltype/index");
@@ -56,7 +55,6 @@ sequelize
   })
   .catch((err) => console.log(err));
 
-app.use("/", routes);
 app.listen(port, () => {
   console.log(`server running at ${port}`);
 });
