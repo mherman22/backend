@@ -27,8 +27,10 @@ const teamRoleRoutes = require("./database/routes & controllers/teamRole/index")
 const userRoutes = require("./database/routes & controllers/user/index");
 const userRoleRoutes = require("./database/routes & controllers/userRole/index");
 
-// app.use("", judgeRoutes);
-// app.use("", leagueRoutes);
+app.use("/debate/judge", judgeRoutes);
+app.use("/debate/league", leagueRoutes);
+app.use("/debate/match", matchRoutes);
+app.use("/debate/matchComments", matchCommentsRoutes);
 
 const Sequelize = require("sequelize");
 const seq = require("./database/config/config");
