@@ -15,7 +15,7 @@ exports.getAllMatches = async (req, res) => {
 
 //-------------------------------------------------------------------------------------------------------------
 
-exports.getOneMatch = async (res, req) => {
+exports.getOneMatch = async (req,res) => {
   const { id } = req.params;
 
   const matchs = await match.findOne({
